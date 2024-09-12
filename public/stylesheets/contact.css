@@ -1,0 +1,120 @@
+/* stylesheets/contact.css */
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+main {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+  font-size: 2em;
+  color: #333;
+}
+h2 {
+  font-size: 1.5em;
+  color: #333;
+}
+p {
+  line-height: 1.6;
+}
+.contact-info {
+  margin-bottom: 30px;
+}
+.contact-info p {
+  font-size: 1.1em;
+}
+.contact-info strong {
+  color: #007bff;
+}
+.contact-form {
+  margin-top: 30px;
+}
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+.contact-form label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  margin-top: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+.contact-form textarea {
+  height: 150px;
+}
+.contact-form button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+/* Message styles */
+.form-message {
+  margin-top: 20px;
+}
+.form-message p {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1em;
+}
+.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+/* Mobile styles */
+@media (max-width: 767px) {
+  main {
+    margin: 20px;
+    padding: 15px;
+  }
+  h1 {
+    font-size: 1.5em;
+  }
+  h2 {
+    font-size: 1.2em;
+  }
+  .contact-info p {
+    font-size: 1em;
+  }
+  .contact-form label {
+    margin-top: 8px;
+  }
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    font-size: 0.9em;
+  }
+  .contact-form button {
+    padding: 10px;
+    font-size: 1em;
+  }
+}

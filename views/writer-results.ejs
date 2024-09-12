@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Writer Results</title>
+  <link rel="stylesheet" href="/stylesheets/styles.css" />
+  <link rel="shortcut icon" href="/images/logo1.png" type="image/x-icon" />
+</head>
+<body>
+  <%- include('_header.ejs') %>
+  <main class="writer-results">
+    <% if(writers.length > 0) { %> 
+      <% writers.forEach(writer => { %>
+        <div class="writer-card">
+          <h2 style="text-transform: capitalize;"><%= writer.username %></h2>
+          <p>Specializations: <%= writer.specialization %></p>
+          <p>Hourly Rate: $<%= writer.hourly_rate %>/hr</p>
+          <p>
+            Availability: 
+            <% if (writer.available) { %>
+              <span class="availability-dot available"></span> Available
+            <% } else { %>
+              <span class="availability-dot unavailable"></span> Not Available
+            <% } %>
+          </p>
+          <a href="/writers/<%= writer.user_id %>" class="view-profile-btn">View Profile</a>
+        </div>
+      <% }) %> 
+    <% } else { %>
+      <h2>No writers found</h2>
+    <% } %>
+  </main>
+  <%- include('_footer.ejs') %>
+</body>
+</html>

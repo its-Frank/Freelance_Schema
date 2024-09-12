@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Writer Portfolio</title>
+    <link rel="stylesheet" href="stylesheets/styles.css" />
+    <link rel="stylesheet" href="/styleshhets/wriprofile.css">
+    <link rel="shortcut icon" href="images/logo1.png" type="image/x-icon" />
+  </head>
+  <body>
+    <%- include('_header.ejs') %>
+    <h1><%= writer.name %>'s Portfolio</h1>
+    <div class="portfolio-items">
+      <% if (writer.portfolio_items && writer.portfolio_items.length > 0) { %>
+      <ul>
+        <% for (const item of writer.portfolio_items) { %>
+        <li>
+          <h3><%= item.title %></h3>
+          <p><%= item.description %></p>
+          <% if (item.image_url) { %>
+          <img src="<%= item.image_url %>" alt="<%= item.title %>" />
+          <% } %>
+        </li>
+        <% } %>
+      </ul>
+      <% } else { %>
+      <p>No portfolio items available.</p>
+      <% } %>
+    </div>
+    <%- include('_footer.ejs') %>
+  </body>
+</html>

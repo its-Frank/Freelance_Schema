@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Writer Description- Ethical Freelance Writing Marketplace and Training Hub
+    </title>
+    <link rel="stylesheet" href="/stylesheets/styles.css" />
+    <link rel="shortcut icon" href="images/logo1.png" type="image/x-icon" />
+  </head>
+  <body>
+    <%- include('_header.ejs') %>
+    <main>
+      <section>
+        <h1>Descriptions</h1>
+        <br />
+        <h2>Personal Information</h2>
+        <h3><%= locals.user.username %></h3>
+        <h3>Email: <%= locals.user.email %></h3>
+        <h3><%= locals.user.bio %></h3>
+        <h3>Role: <%= locals.user.role %></h3>
+        <h3><%= locals.user.specialization %></h3>
+        <h3><%= locals.user.hourly_rate %></h3>
+      </section>
+    <section class="reachme">
+        <h1>Reach Me</h1>
+      
+        <p>Feel free to contact me directly at my email address:</p>
+        <h3><a href="mailto:<%= locals.user.email %>"><%= locals.user.email %></a></h3>
+      
+        <h2>Project Discussion</h2>
+      
+        <form action="/upload" method="post" enctype="multipart/form-data">
+          <label for="project_file">Attach project files (optional):</label>
+          <input type="file" id="project_file" name="project_file" accept=".pdf,.docx,.doc,.zip" />
+      
+          <p>
+            <button type="submit">Send Project Discussion</button>
+          </p>
+        </form>
+      </section>
+    </main>
+    <%- include('_footer.ejs') %>
+  </body>
+</html>
